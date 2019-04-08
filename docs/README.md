@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 进入文档 →
-actionLink: /vuepress/demo.html
+actionLink: /table.html
 pageClass: index-page-class
 ---
 

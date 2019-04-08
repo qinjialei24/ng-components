@@ -1,7 +1,7 @@
 module.exports = {
-    title: 'ng-components',  // 设置网站标题
+    title: '基于 angularJs1 的组件库',  // 设置网站标题
     description: 'ng-components',
-    dest: 'docs/.ng-components/dist',    // 设置输出目录
+    dest: 'docs/.vuepress/dist',    // 设置输出目录
     base: '/ng-components/', // 项目名称
     repo: 'https://leeesin/github.io/ng-components', // 添加 github 链接
     markdown: {
@@ -24,10 +24,10 @@ module.exports = {
         ],
         sidebar: [
             {
-                title: '示例',
+                title: 'table',
                 collapsable: false,
                 children: [
-                    '/demo.md'
+                    '/table.md'
                 ]
             },
         ],
