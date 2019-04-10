@@ -21,7 +21,7 @@ baTable.directive("baTable", function ($compile, $timeout) {
     transclude: true,
     scope: {
       options: '=',
-      parentScope: '='
+      pageScope: '='
     },
 
     link: function (scope, element, attrs, ctrl) { },
@@ -40,7 +40,7 @@ baTable.directive("baTable", function ($compile, $timeout) {
           return cur.template ? pre + '<td>' + cur.template + '</td>' : pre + '<td>{{item.' + cur.prop + '}}</td>'
         }, '')
       }
-
+     //优化:将固定的 html 模板写在 html 文件内,而不是全部拼接字符串
       sc.getTemplate = function () {
         var thead = sc.getTheadHtml()
         var tbody = sc.getTbodyHtml()
@@ -53,7 +53,7 @@ baTable.directive("baTable", function ($compile, $timeout) {
 
       sc.renderTable = function (template) {
         console.log('template 的值是：', template);
-        $element.append($compile(template)(sc.parentScope))
+        $element.append($compile(template)(sc.pageScope))
       }
 
       sc.renderTable(sc.getTemplate())
@@ -83,4 +83,4 @@ $scope.options = [
     },
   ]
 ```
-### parentScope (页面所在作用域)
+### pageScope (页面所在作用域)
