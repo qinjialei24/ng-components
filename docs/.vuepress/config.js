@@ -38,6 +38,7 @@ module.exports = {
                 ]
             },
             ['/table', 'table'],
+            ['/message', 'message'],
             ['/button', 'button'],
         ],
         sidebarDepth: 2

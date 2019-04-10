@@ -106,7 +106,7 @@ app.controller('', function ($scope) {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ---- | ---- | ---- | ------ |------|------ |
-| type   | 按钮类型，可选值为 primary、success、danger或者不设置| string | primary |
+| type   | 按钮类型，可选值为 `primary`、`success`、`danger`或者不设置| string | primary |
 | disabled | 是否禁用   | boolean | false | 
 
 

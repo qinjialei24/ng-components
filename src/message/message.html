@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  <script src="../common/utils.js"></script>
+  <link rel="stylesheet"
+        href="./message.css">
+</head>
+
+<body>
+  <div ng-app="myApp"
+       ng-controller="myCtrl">
+    <button ng-click='hint()'>弹出提示信息</button>
+
+  </div>
+</body>
+
+<script>
+  var app = angular.module("myApp", []);
+
+  app.controller('myCtrl', function ($scope, $compile) {
+    $scope.hint = function () {
+      _c.message(
+        {
+          wait: '2000',
+          hint: '提示信息',
+          type: 'fail'
+        },
+        $scope,
+        $compile
+      )
+    }
+  })
+
+  app.directive("ngMessage", function ($compile, $timeout) {
+    return {
+      restrict: 'E',
+      template: '<div class="ng_message">' +
+        ' <div ng-class="setStyle()"' +
+        'ng-transclude></div></div>',
+      transclude: true,
+      scope: {
+        type: '@'
+      },
+      link: function (scope, element, attrs, ctrl) {
+      },
+      controller: function ($scope, $element, $attrs, $parse) {
+        $scope.setStyle = function () {
+          return 'ng_message-core ng_message-core--' + $scope.type
+        }
+      }
+    };
+  })
+
+
+</script>
+
+</html>

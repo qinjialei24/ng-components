@@ -1,0 +1,36 @@
+.ng_message {
+  width: 100%;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  position: fixed;
+  top: 20px;
+  z-index: 11021; }
+
+.ng_message-core {
+  border-radius: 5px;
+  vertical-align: top;
+  color: #fff;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+  -webkit-animation: move 0.25s forwards;
+          animation: move 0.25s forwards; }
+  .ng_message-core--success {
+    background-color: #4fc08d; }
+  .ng_message-core--fail {
+    background-color: #ff5252; }
+
+@-webkit-keyframes move {
+  from {
+    margin-top: -36px; }
+  to {
+    margin-top: 20px; } }
+
+@keyframes move {
+  from {
+    margin-top: -36px; }
+  to {
+    margin-top: 20px; } }
