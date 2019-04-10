@@ -13,19 +13,15 @@
 ### js
 ```js
 
-var baTable = angular.module("baTable", []);
-baTable.directive("baTable", function ($compile, $timeout) {
+var ngTable = angular.module("ngTable", []);
+ngTable.directive("ngTable", function ($compile, $timeout) {
   return {
     restrict: 'E',
     templateUrl: 'components/basic/table/table.html',//这里需要替换成你自己项目的模板位置
-    transclude: true,
     scope: {
       options: '=',
       pageScope: '='
     },
-
-    link: function (scope, element, attrs, ctrl) { },
-
     controller: function ($scope, $element, $attrs, $parse, $compile) {
       var sc = $scope;
 
@@ -71,6 +67,7 @@ $scope.options = [
     {
       label: '名称',
       prop: 'name',
+      //这里组件做了特殊处理，所访问的方法（test）、变量（map）都是指向页面
       template: '<h1 style="color:red" ng-click="test(item.status)">{{map[item.status]}}</h1>'
     },
     {
@@ -84,3 +81,10 @@ $scope.options = [
   ]
 ```
 ### pageScope (页面所在作用域)
+例如：
+```js
+app.controller('', function ($scope) {
+  $scope.pageScope=$scope//将此变量 pageScope 传入组件
+}
+
+```
