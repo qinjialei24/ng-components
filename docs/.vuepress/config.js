@@ -24,7 +24,7 @@ module.exports = {
         ],
         sidebar: [
             {
-                title:'前言',
+                title: '前言',
                 collapsable: false,
                 children: [
                     '/foreword.md'
@@ -37,14 +37,8 @@ module.exports = {
                     '/usage.md'
                 ]
             },
-            {
-                title: 'table',
-                collapsable: false,
-                children: [
-                    '/table.md'
-                ]
-            },
-
+            ['/table', 'table'],
+            ['/button', 'button'],
         ],
         sidebarDepth: 2
     },

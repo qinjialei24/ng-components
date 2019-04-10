@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  <link rel="stylesheet"
+        href="./button.css">
+</head>
+
+<body>
+  <div ng-app="myApp"
+       ng-controller="myCtrl">
+    <ng-button>primary</ng-button>
+    <ng-button type='danger'>danger</ng-button>
+    <ng-button type='success'>success</ng-button>
+    <ng-button type='danger' disabled='disabled'>禁用</ng-button>
+  </div>
+</body>
+
+<script>
+  var app = angular.module("myApp", []);
+
+  app.controller('myCtrl', function ($scope) {
+    $scope.disabled = 'true'
+  })
+
+  app.directive("ngButton", function ($compile, $timeout) {
+    return {
+      transclude: true,
+      replace: true,
+      restrict: 'E',
+      template: '<div class="ng_button ripple" ng-class="setStyle(type)"><span ng-transclude></span></div>',//这里需要替换成你自己项目的模板位置
+      scope: {
+        type: '@',//primary success danger
+        disabled: '=?'//是否禁用
+      },
+      controller: function ($scope, $element, $attrs, $parse) {
+        $scope.type = $scope.type || 'primary'
+        $scope.disabled = $scope.disabled || false
+
+        $scope.setStyle = function (type) {
+          var disabled = $scope.disabled ? 'disabled' : ''
+          return 'ng_button--' + type + ' ' + disabled
+        }
+
+      }
+    }
+  })
+</script>
+
+</html>

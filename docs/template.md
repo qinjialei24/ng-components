@@ -1,10 +1,10 @@
-# table 表格组件
+# xxx xxx
 
 ## 源码
 
 ### html
 ``` html
-<div class="ba_table">
+<div class="xxx">
 </div>
 ```
 
@@ -58,10 +58,10 @@ ngTable.directive("ngTable", function ($compile, $timeout) {
 
 ## API
 
-| 参数 | 说明 | 类型 |默认值|
-| ----- | ----- | -----| ----- | ----- | -----
-| options | 表格每列的配置项 | object | - |
-| pageScope | 页面所在作用域 | object |-|
+| 参数      | 说明             | 类型   | 默认值 |
+| --------- | ---------------- | ------ | ------ |  |  |
+| options   | 表格每列的配置项 | object | -      |
+| pageScope | 页面所在作用域   | object | -      |
 
 ## 使用
 ```html

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  <script src="./common/utils.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp"
+       ng-controller="myCtrl">
+
+    
+  </div>
+</body>
+
+<script>
+  var app = angular.module("myApp", []);
+
+  app.controller('myCtrl', function ($scope) {
+    $scope.pageScope = ' $scope222'//将此变量 pageScope 传入组件
+
+  })
+
+  app.directive("xxx", function ($compile, $timeout) {
+    return {
+      restrict: 'E',
+      templateUrl: '',//这里需要替换成你自己项目的模板位置
+      scope: {
+
+      },
+
+      controller: function ($scope, $element, $attrs, $parse, $compile) {
+        alert(122222)
+
+
+      }
+
+    }
+  })
+
+
+</script>
+
+</html>
