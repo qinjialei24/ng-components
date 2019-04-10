@@ -37,9 +37,10 @@ module.exports = {
                     '/usage.md'
                 ]
             },
-            ['/table', 'table'],
-            ['/message', 'message'],
-            ['/button', 'button'],
+            ['/table', 'table 表格'],
+            ['/message', 'message 全局提示'],
+            ['/button', 'button 按钮'],
+            ['/page', 'page 分页器'],
         ],
         sidebarDepth: 2
     },

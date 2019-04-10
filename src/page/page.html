@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  <script src="./common/utils.js"></script>
+  <link rel="stylesheet"
+        href="./page.css">
+</head>
+
+<body>
+  <div ng-app="myApp"
+       ng-controller="myCtrl">
+    <ng-page current='{{page.currentPage}}'
+             size='{{page.pageSize}}'
+             total='{{page.total}}'
+             change='change(currentPage)'>
+
+  </div>
+</body>
+
+<script>
+  var app = angular.module("myApp", []);
+
+  app.controller('myCtrl', function ($scope) {
+
+    $scope.page = {
+      currentPage: 1,
+      pageSize: 2,
+      total: 200,
+    }
+
+    $scope.change = function (currentPage) {
+      $scope.page.currentPage = currentPage
+      console.log('currentPage 的值是：',currentPage);
+    }
+
+
+  })
+
+
+  var helper = {
+    unique: function (array) {
+      var res = {}
+      var temp = []
+
+      for (var i = 0; i < array.length; i++) {
+        var val = array[i]
+        res[val] = true
+      }
+
+      for (var key in res) {
+        if (res.hasOwnProperty(key)) {
+          temp.push(Number(key))
+        }
+      }
+      return temp
+    }
+  }
+
+
+  app.directive("ngPage", function ($compile, $timeout) {
+    return {
+      restrict: 'E',
+      template: '<div class="ng_page" ng-show="total!=0">' + "<span class='ng_page-item' ng-class='{disabled:current==1}' ng-click='reduce()'> <  </span> " +
+        " <span ng-repeat='item in pages track by $index '  class='ng_page-item' ng-class='{active:item==current}' ng-click='onPageChange(item)'>  {{item}} </span>   " +
+        '<span class="ng_page-item" ng-class="{disabled:current==totalPages}" ng-click="add()"> > </span>  </div>     ',
+
+      replace: true,
+      scope: {
+        total: '@',//数据总数
+        current: '@',//当前页码
+        size: '@?',//每页条数
+        change: '&'//&代表传递函数 页码改变触发该函数 
+      },
+
+      link: function (scope, element, attrs, ctrl) {
+      },
+
+      controller: function ($scope, $element, $attrs, $parse) {
+        var sc = $scope
+
+        sc.total = Number(sc.total)
+        sc.current = Number(sc.current)
+        sc.size = Number(sc.size) || 20//默认20
+        sc.pages = []//所有页数
+        sc.totalPages = 0,//总页数
+
+          sc.onPageChange = function (page) {
+            if (page == '...') return
+            sc.current = page
+            sc.change({ currentPage: page })//执行页面传入的方法 并传参时 必须这么写 ，而且使用的页面传递的函数参数 必须叫 currentPage
+            sc.getPages()
+          }
+
+        sc.reduce = function () {
+          var c = Number(sc.current)
+          if (c === 1) return
+          sc.onPageChange(c - 1)
+        }
+
+        sc.add = function () {
+          var c = Number(sc.current)
+          if (c === sc.totalPages) return
+          sc.onPageChange(c + 1)
+        }
+        sc.getPages = function () {
+          sc.current = Number(sc.current)
+          sc.totalPages = Math.ceil(sc.total / sc.size)//总共多少页
+          sc.pages = [1, sc.current - 2, sc.current - 1, sc.current, sc.current + 1, sc.current + 2, sc.totalPages]
+          sc.pages = sc.pages.filter(function (item) { return item >= 1 && item <= sc.totalPages })
+          sc.pages = helper.unique(sc.pages)
+
+          sc.pages = sc.pages.reduce(function (pre, cur, i) {
+            var hasGap = sc.pages[i + 1] - sc.pages[i] > 1//是否加入省略号 '...'
+            pre.push(cur)
+            hasGap && pre.push('...')
+            return pre
+          }, [])
+        }
+        sc.$watch('total', sc.getPages)
+      }
+    };
+  });
+
+
+</script>
+
+</html>

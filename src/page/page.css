@@ -1,0 +1,29 @@
+.ng_page-item {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 32px;
+  height: 32px;
+  line-height: 30px;
+  margin-right: 4px;
+  text-align: center;
+  list-style: none;
+  background-color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-family: Arial;
+  font-weight: 500;
+  border: 1px solid #dcdee2;
+  border-radius: 4px;
+  transition: border .2s ease-in-out, color .2s ease-in-out; }
+  .ng_page-item.active {
+    border: 1px solid #2d8cf0; }
+  .ng_page-item.disabled {
+    cursor: not-allowed;
+    background: #dcdee2; }
+    .ng_page-item.disabled:hover {
+      border: 1px solid #dcdee2; }
+  .ng_page-item:hover {
+    border: 1px solid #2d8cf0; }
