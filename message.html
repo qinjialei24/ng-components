@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>message 提示信息 | ng-components</title>
+    <meta name="description" content="基于 angularJs1 的组件库,提高后台系统开发效率">
+    
+    
+    <link rel="preload" href="/ng-components/assets/css/0.styles.bcfee8c9.css" as="style"><link rel="preload" href="/ng-components/assets/js/app.42fd3f2d.js" as="script"><link rel="preload" href="/ng-components/assets/js/7.b8b9aec5.js" as="script"><link rel="prefetch" href="/ng-components/assets/js/10.a883b434.js"><link rel="prefetch" href="/ng-components/assets/js/11.9daf1af0.js"><link rel="prefetch" href="/ng-components/assets/js/12.a15c98a1.js"><link rel="prefetch" href="/ng-components/assets/js/2.58ee2d79.js"><link rel="prefetch" href="/ng-components/assets/js/3.c64d9e04.js"><link rel="prefetch" href="/ng-components/assets/js/4.c0c70fdf.js"><link rel="prefetch" href="/ng-components/assets/js/5.ebf497c6.js"><link rel="prefetch" href="/ng-components/assets/js/6.f02e0f79.js"><link rel="prefetch" href="/ng-components/assets/js/8.e1874628.js"><link rel="prefetch" href="/ng-components/assets/js/9.94f795ed.js">
+    <link rel="stylesheet" href="/ng-components/assets/css/0.styles.bcfee8c9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ng-components/" class="home-link router-link-active"><!----> <span class="site-name">ng-components</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">nav导航</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://ng-components.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ng-components官方文档
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/Leeesin/ng-components" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">nav导航</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://ng-components.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ng-components官方文档
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/Leeesin/ng-components" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>前言</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/ng-components/foreword.html" class="sidebar-link">介绍</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>快速上手</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/ng-components/usage.html" class="sidebar-link">快速上手</a></li></ul></div></li><li><a href="/ng-components/table.html" class="sidebar-link">table 表格</a></li><li><a href="/ng-components/message.html" class="active sidebar-link">message 全局提示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ng-components/message.html#源码" class="sidebar-link">源码</a></li><li class="sidebar-sub-header"><a href="/ng-components/message.html#api" class="sidebar-link">API</a></li></ul></li><li><a href="/ng-components/button.html" class="sidebar-link">button 按钮</a></li><li><a href="/ng-components/page.html" class="sidebar-link">page 分页器</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="message-提示信息"><a href="#message-提示信息" aria-hidden="true" class="header-anchor">#</a> message 提示信息</h1> <h2 id="源码"><a href="#源码" aria-hidden="true" class="header-anchor">#</a> 源码</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">&quot;ngMessage&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">$compile</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    restrict<span class="token punctuation">:</span> <span class="token string">'E'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token string">'&lt;div class=&quot;ng_message&quot;&gt;'</span> <span class="token operator">+</span>
+    <span class="token string">' &lt;div ng-class=&quot;setStyle()&quot;'</span><span class="token operator">+</span>
+    <span class="token string">'ng-transclude&gt;&lt;/div&gt;&lt;/div&gt;'</span><span class="token punctuation">,</span>
+
+    transclude<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    scope<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> <span class="token string">'@'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function-variable function">controller</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">$scope<span class="token punctuation">,</span> $element<span class="token punctuation">,</span> $attrs<span class="token punctuation">,</span> $parse</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      $scope<span class="token punctuation">.</span><span class="token function-variable function">setStyle</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'ng_message-core ng_message-core--'</span> <span class="token operator">+</span> $scope<span class="token punctuation">.</span>type
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.ng_message</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 11021<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.ng_message-core</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">vertical-align</span><span class="token punctuation">:</span> top<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">padding-right</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move 0.25s forwards<span class="token selector">;
+  &amp;--success</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #4fc08d<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">&amp;--fail</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ff5252<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> move</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> -36px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="api"><a href="#api" aria-hidden="true" class="header-anchor">#</a> API</h2> <p>通过直接调用以下方法来使用组件：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>
+ app<span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">$scope<span class="token punctuation">,</span> $compile</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    $scope<span class="token punctuation">.</span><span class="token function-variable function">hint</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      _c<span class="token punctuation">.</span><span class="token function">message</span><span class="token punctuation">(</span>
+        <span class="token punctuation">{</span>
+          wait<span class="token punctuation">:</span> <span class="token string">'2000'</span><span class="token punctuation">,</span>
+          hint<span class="token punctuation">:</span> <span class="token string">'提示信息'</span><span class="token punctuation">,</span>
+          type<span class="token punctuation">:</span> <span class="token string">'fail'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        $scope<span class="token punctuation">,</span>
+        $compile
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+
+
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>默认值</th></tr></thead> <tbody><tr><td>wait</td> <td>消失时间</td> <td>string</td> <td>2000(单位 ms)</td></tr> <tr><td>hint</td> <td>提示信息内容</td> <td>string</td> <td>-</td></tr> <tr><td>type</td> <td>提示信息类型,可选值为 <code>success</code> 、<code>fail</code>  或者不设置</td> <td>string</td> <td>success</td></tr> <tr><td>$scope</td> <td>页面 $scope</td> <td>object</td> <td>-</td></tr> <tr><td>$compile</td> <td>页面 $compile</td> <td>object</td> <td>-</td></tr></tbody></table></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Leeesin/ng-components/edit/master/docs/message.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/10/2019, 5:14:59 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/ng-components/table.html" class="prev">
+          table 表格
+        </a></span> <span class="next"><a href="/ng-components/button.html">
+          button 按钮
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/ng-components/assets/js/app.42fd3f2d.js" defer></script><script src="/ng-components/assets/js/7.b8b9aec5.js" defer></script>
+  </body>
+</html>
