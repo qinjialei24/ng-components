@@ -24,6 +24,13 @@ module.exports = {
         ],
         sidebar: [
             {
+                title:'前言',
+                collapsable: false,
+                children: [
+                    '/foreword.md'
+                ]
+            },
+            {
                 title: '快速上手',
                 collapsable: false,
                 children: [
