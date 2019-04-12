@@ -1,5 +1,7 @@
 # page 分页器
 
+## [在线运行](https://codepen.io/leeesin/pen/mgwOWY)
+
 ## 源码
 ``` js
 var helper = {
@@ -126,14 +128,6 @@ app.directive("ngPage", function ($compile, $timeout) {
 
 ```
 
-## API
-
-| 参数 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |------|------  |
-| total   | 数据总数 | number | 0      |
-| current | 当前页码   | number | 1     |
-| size | 每页条数   | number | 1     |
-| change | 页码改变触发该函数    | function | -     |
 
 ## 使用
 
@@ -146,11 +140,21 @@ app.directive("ngPage", function ($compile, $timeout) {
 ```js
 app.controller('', function ($scope) {
 ```
+## API
 
-## 注意事项
+| 参数 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |------|------  |
+| total   | 数据总数 | number | 0      |
+| current | 当前页码   | number | 1     |
+| size | 每页条数   | number | 1     |
+| change | 页码改变触发该函数    | function | -     |
+
+
+
+<!-- ## 注意事项
 
 ::: warning
 1
-:::
+::: -->
 
 
