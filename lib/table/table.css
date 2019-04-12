@@ -1,0 +1,16 @@
+.ng_table table {
+  border: 1px solid #ebeef5;
+  color: #515a6e; }
+  .ng_table table th {
+    font-size: 15px; }
+  .ng_table table td {
+    font-size: 12px; }
+  .ng_table table th,
+  .ng_table table td {
+    border-bottom: 1px solid #ebeef5;
+    padding: 10px;
+    text-align: center; }
+  .ng_table table tbody tr:nth-child(odd) {
+    background: #f8f8f9; }
+  .ng_table table tbody tr:hover {
+    background: #ebf7ff; }

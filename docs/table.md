@@ -1,20 +1,14 @@
 # table 表格组件
 
+## [在线运行](https://codepen.io/leeesin/pen/KYqRNY?editors=1111)
+
 ## 源码
-
-### html
-``` html
-<div class="ba_table">
-</div>
-```
-
-### js
 ```js
 var ngTable = angular.module("ngTable", []);
 ngTable.directive("ngTable", function ($compile, $timeout) {
   return {
     restrict: 'E',
-    templateUrl: '',//这里需要替换成你自己项目的模板位置
+    template: '<div class="ng_table"></div>',//这里需要替换成你自己项目的模板位置
     scope: {
       options: '=',
       pageScope: '='
@@ -38,7 +32,7 @@ ngTable.directive("ngTable", function ($compile, $timeout) {
         var thead = sc.getTheadHtml()
         var tbody = sc.getTbodyHtml()
         var empty = '<tr ng-show="tableData.length==0"><td colspan="7" class="text-center empty-data-td">暂无数据</td> </tr>'
-        var h = '<div><table class="table table-striped"><thead><tr>' + thead + '<tr></thead>'
+        var h = '<div><table class="ng_table"><thead><tr>' + thead + '<tr></thead>'
         var b = '<tbody>' + empty + ' <tr ng-repeat="item in tableData" ng-show="tableData.length!=0">' + tbody + '</tr> </tbody> </table> </div>'
         var template = h + b;
         return template

@@ -1,0 +1,30 @@
+.ng_table {
+  table {
+    border: 1px solid #ebeef5;
+    color: rgb(81, 90, 110);
+
+    th {
+      font-size: 15px;
+    }
+
+    td {
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #ebeef5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background: rgb(248, 248, 249);
+      }
+      tr:hover {
+        background: rgb(235, 247, 255);
+      }
+    }
+  }
+}
