@@ -1,0 +1,61 @@
+@mixin border-style {
+  //边框相关的样式
+  border-radius: 5px;
+  border: 1px solid #dcdfe6;
+  outline: none; //将select的宽高等于div的宽高
+}
+
+.ba-form-item {
+  // display: inline-block;
+  margin: 10px;
+  &_label {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    // vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  &_content {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    // vertical-align: middle;
+    &_core {
+      input {
+        width: 200px;
+        height: 40px;
+        background: none;
+        cursor: pointer;
+        @include border-style;
+        &[disabled] {
+          background-color: #f5f7fa;
+          border-color: #e4e7ed;
+          color: #c0c4cc;
+          cursor: not-allowed;
+        }
+      }
+      select {
+        @include border-style;
+        cursor: pointer;
+        width: 200px;
+        height: 40px;
+        background: none;
+        padding-left: 10px;
+        line-height: 40px;
+        &[disabled] {
+          background-color: #f5f7fa;
+          border-color: #e4e7ed;
+          color: #c0c4cc;
+          cursor: not-allowed;
+        }
+      }
+    }
+    &_error {
+      position: absolute;
+      line-height: 4px;
+      color: #f56c6c;
+      font-size: 12px;
+    }
+  }
+}

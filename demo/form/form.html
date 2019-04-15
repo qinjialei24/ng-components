@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../common/utils.js"></script>
+
+  <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  <!-- _c 对象的定义 -->
+  <link rel="stylesheet"
+        href="./form-item.css">
+</head>
+
+<body>
+  <div ng-app="myApp"
+       ng-controller="myCtrl">
+    <ng-form model='myForm'
+             inline='false'
+             success='success()'
+             label-width='100px'>
+
+      <ng-form-item label='年龄'
+                    required='true'
+                    prop='name'>
+        <input ng-model='myForm.name'>
+      </ng-form-item>
+
+      <ng-form-item label='年龄'
+                    required='true'
+                    prop='name'>
+        <input ng-model='myForm.name'>
+      </ng-form-item>
+
+      <ng-form-item label='城市'
+                    required='true'
+                    prop='address'>
+        <select ng-model='myForm.address'>
+          <option ng-repeat="x in cities">{{x}}</option>
+        </select>
+      </ng-form-item>
+
+    </ng-form>
+
+    <button ng-click='validate()'>触发表单验证</button>
+
+  </div>
+</body>
+
+<script>
+  var app = angular.module("myApp", []);
+
+
+  app.controller('myCtrl', function ($scope) {
+    var sc = $scope
+    sc.myForm = {
+      name: '张三',
+      age: 20,
+      address: '',
+    }
+    sc.success = function () {
+      alert('验证成功')
+    }
+
+    sc.cities = ['深圳', '香港', '赤壁']
+
+    sc.validate = function () { 
+      _c.validateForm()
+    }
+
+
+  })
+
+
+
+  // 以下是ng-form -------------------------------------------------------------------------------------------
+  app.directive('ngForm', function () {
+    return {
+      restrict: 'E',
+      template: '<div><div ng-transclude></div></div>',
+      transclude: true,
+      scope: {
+        labelWidth: '@',
+        inline: '=?',//是否一行显示
+        labelPosition: '@',
+        model: '=?',//存放表单数据的对象
+        success: '&'//若表单验证通过 则执行回调 ，&代表传递函数
+      },
+      link: function (scope, element, attrs) {
+
+      },
+      controller: function ($scope, $element, $attrs, $parse) {
+        $scope.componentName = 'ng-form'//用于递归查找组件
+        $scope.labelWidth = $scope.labelWidth || '50px'
+        $scope.labelPosition = $scope.labelPosition || 'right'
+        $scope.model = $scope.model || {}
+        $scope.validateResult = {}//每个子 form-item 的验证结果  key 为form-item的 prop，value 为验证结果 true or false 
+
+        $scope.$on('ng-form:validate', function () {
+          $scope.validate( $scope)
+        })
+
+        $scope.validate = function () {//若每个子 form-item 的 pass 都为 true，则验证都为 true，反之为 false
+          for (var key in $scope.validateResult) {
+            if ($scope.validateResult.hasOwnProperty(key)) {
+              var value = $scope.validateResult[key];
+              if (!value) return
+            }
+          }
+          $scope.success()
+        }
+      }
+    }
+  })
+
+  // 以下是ng-form-item -------------------------------------------------------------------------------------------
+
+  var SYNC_FIELDS = ['labelWidth', 'labelPosition', 'model', 'inline']//同步父组件的 scope 对象到 form-item 的 scope 内
+
+  app.directive('ngFormItem', function () {
+    return {
+      restrict: 'E',
+      template: '<div class="ng-form-item" ng-style="{"display": inline ? "inline-block" : "block"}">' +
+        '<div><div class="ng-form-item_label" ng-style="{"width":labelWidth,"textAlign":labelPosition}">' +
+        ' <span ng-show="required" style="color:red;">*</span> <span>{{label}}</span></div><div class="ng-form-item_content">' +
+        '<div class="ng-form-item_content_core"ng-transclude></div>' +
+        '<div ng-if="!pass" class="ng-form-item_content_error">{{label}}必填！</div></div> </div></div>',
+      transclude: true,
+      scope: {
+        trigger: '@',//change 值改变时验证
+        label: '@',
+        prop: '@',
+        required: '=?',
+      },
+      link: function (scope, element, attrs) {
+
+      },
+      controller: function ($scope, $element, $attrs, $parse) {
+        $scope.componentName = 'ng-form-item'//用于递归查找组件
+        $scope.required = $scope.required === undefined ? false : $scope.required//设置默认值
+        $scope.formModel = {}
+        $scope.labelWidth = ''
+        $scope.pass = true//是否验证通过 true为通过
+
+        $scope.updateFormModel = function () {//将ng-form的表单对象同步到组件内
+          var parent = _c.findParentByComponentName($scope, 'ng-form')
+          $scope.formModel = parent.model
+        }
+
+        $scope.syncWithParentScope = function () {//同步父组件的 scope 数据
+          var parent = _c.findParentByComponentName($scope, 'ng-form')
+          SYNC_FIELDS.forEach(function (field) {
+            $scope[field] = parent[field]
+          })
+        }
+
+        $scope.validate = function () {
+          if ($scope.required) {
+            var value = $scope.formModel[$scope.prop]
+            var noPass = value === '' || value === undefined//验证不通过的条件
+            if (noPass) $scope.pass = false
+            else $scope.pass = true
+          } else {
+            $scope.pass = true
+          }
+          var parent = _c.findParentByComponentName($scope, 'ng-form')
+          parent.validateResult[$scope.prop] = $scope.pass
+        }
+        $scope.$on('ng-form-item:validate', function () {
+          $scope.updateFormModel()
+          $scope.validate() //通过 则设置 pass 为true ，标识此 form-item 验证通过
+        })
+        $scope.syncWithParentScope()
+
+      }
+    }
+  })
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

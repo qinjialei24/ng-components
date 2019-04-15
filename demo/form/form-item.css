@@ -1,0 +1,45 @@
+ng-form-item {
+  margin: 10px; }
+  ng-form-item_label {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+  ng-form-item_content {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block; }
+    ng-form-item_content_core input {
+      width: 200px;
+      height: 40px;
+      background: none;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 1px solid #dcdfe6;
+      outline: none; }
+      ng-form-item_content_core input[disabled] {
+        background-color: #f5f7fa;
+        border-color: #e4e7ed;
+        color: #c0c4cc;
+        cursor: not-allowed; }
+    ng-form-item_content_core select {
+      border-radius: 5px;
+      border: 1px solid #dcdfe6;
+      outline: none;
+      cursor: pointer;
+      width: 200px;
+      height: 40px;
+      background: none;
+      padding-left: 10px;
+      line-height: 40px; }
+      ng-form-item_content_core select[disabled] {
+        background-color: #f5f7fa;
+        border-color: #e4e7ed;
+        color: #c0c4cc;
+        cursor: not-allowed; }
+    ng-form-item_content_error {
+      position: absolute;
+      line-height: 4px;
+      color: #f56c6c;
+      font-size: 12px; }
