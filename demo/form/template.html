@@ -1,0 +1,18 @@
+<div class='ng_form-item'
+     ng-style='{"display": inline ? "inline-block" : "block"}'>
+  <div>
+    <div class='ng_form-item_label'
+         ng-style='{"width":labelWidth,"textAlign":labelPosition}'>
+      <span ng-show='required'
+            style='color:red;'>*</span>
+      <span>{{label}}</span></div>
+
+    <div class='ng_form-item_content'>
+      <div class='ng_form-item_content_core'
+           ng-transclude></div>
+      <div ng-if='!pass'
+           class='ng_form-item_content_error'>{{label}}必填</div>
+    </div>
+
+  </div>
+</div>

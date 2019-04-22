@@ -8,14 +8,14 @@ var _c = { // 组件的辅助函数
     var dom = document.createElement('div')
     document.body.appendChild(dom)
     dom.appendChild(html[0])
-    setTimeout(function () {//todo 使用单例模式提升性能
+    setTimeout(function () {
       document.body.removeChild(dom)
     }, wait);
   },
   // 优化:使用ref获取组件实例代替广播
   validateForm: function ($scope) {//触发表单验证 
-    $scope.$broadcast('ng-form-item:validate')//通知每个 form-item 验证 
-    $scope.$broadcast('ng-form:validate')//通知 form 验证，若每个子 form-item 的 pass 都为 true，则验证都为 true，反之为 false
+    $scope.$broadcast('ng_form-item:validate')//通知每个 form-item 验证 
+    $scope.$broadcast('ng_form:validate')//通知 form 验证，若每个子 form-item 的 pass 都为 true，则验证都为 true，反之为 false
   },
   /**
    *

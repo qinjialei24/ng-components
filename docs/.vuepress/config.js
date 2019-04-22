@@ -38,6 +38,7 @@ module.exports = {
                 ]
             },
             ['/table', 'table 表格'],
+            ['/form', 'form 表单'],
             ['/message', 'message 全局提示'],
             ['/button', 'button 按钮'],
             ['/page', 'page 分页器'],

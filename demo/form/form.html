@@ -6,6 +6,10 @@
   <script src="../common/utils.js"></script>
 
   <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+
+
+
+
   <!-- _c 对象的定义 -->
   <link rel="stylesheet"
         href="./form-item.css">
@@ -46,6 +50,8 @@
   </div>
 </body>
 
+
+
 <script>
   var app = angular.module("myApp", []);
 
@@ -63,7 +69,7 @@
 
     sc.cities = ['深圳', '香港', '赤壁']
 
-    sc.validate = function () { 
+    sc.validate = function () {
       _c.validateForm()
     }
 
@@ -96,7 +102,7 @@
         $scope.validateResult = {}//每个子 form-item 的验证结果  key 为form-item的 prop，value 为验证结果 true or false 
 
         $scope.$on('ng-form:validate', function () {
-          $scope.validate( $scope)
+          _c.validateForm($scope)
         })
 
         $scope.validate = function () {//若每个子 form-item 的 pass 都为 true，则验证都为 true，反之为 false
@@ -112,18 +118,15 @@
     }
   })
 
-  // 以下是ng-form-item -------------------------------------------------------------------------------------------
 
+
+  // 以下是ng-form-item -------------------------------------------------------------------------------------------
   var SYNC_FIELDS = ['labelWidth', 'labelPosition', 'model', 'inline']//同步父组件的 scope 对象到 form-item 的 scope 内
 
   app.directive('ngFormItem', function () {
     return {
       restrict: 'E',
-      template: '<div class="ng-form-item" ng-style="{"display": inline ? "inline-block" : "block"}">' +
-        '<div><div class="ng-form-item_label" ng-style="{"width":labelWidth,"textAlign":labelPosition}">' +
-        ' <span ng-show="required" style="color:red;">*</span> <span>{{label}}</span></div><div class="ng-form-item_content">' +
-        '<div class="ng-form-item_content_core"ng-transclude></div>' +
-        '<div ng-if="!pass" class="ng-form-item_content_error">{{label}}必填！</div></div> </div></div>',
+      templateUrl: './template.html',
       transclude: true,
       scope: {
         trigger: '@',//change 值改变时验证
