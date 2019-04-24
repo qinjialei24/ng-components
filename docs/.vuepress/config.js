@@ -16,9 +16,9 @@ module.exports = {
         lastUpdated: '上次更新', // string | boolean
         nav: [
             {
-                text: 'nav导航',
+                text: '开源不易,赏个star吧！',
                 items: [
-                    { text: 'ng-components官方文档', link: 'https://ng-components.vuejs.org/zh/guide/' },
+                    { text: '项目地址', link: 'https://github.com/Leeesin/ng-components/tree/master' },
                 ]
             },
         ],
